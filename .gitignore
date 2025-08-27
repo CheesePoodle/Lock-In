@@ -72,11 +72,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .DS_Store
 
-DAGV1100/AdventureGame/Library/
+UnityProject/The Video Game/Library/
 
-DAGV1100/AdventureGame/Logs/
+UnityProject/The Video Game/Logs/
 
-DAGV1100/AdventureGame/Packages/
+UnityProject/The Video Game/Packages/
 
 UnityProject/The Video Game/Temp/
 
