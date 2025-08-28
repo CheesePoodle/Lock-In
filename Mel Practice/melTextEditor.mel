@@ -1,0 +1,40 @@
+//body of the snowman
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+CreatePolygonSphere;
+//Result: Butt
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: Body 
+move -r 0 1.629527 0 ;
+scale -r 0.810244 0.810244 0.810244 ;
+CreatePolygonSphere;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: Head
+move -r 0 2.86652 0 ;
+scale -r 0.58821 0.58821 0.58821 ;
+
+//face of the snowman
+polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+// Result: Nose
+rotate -r -os -fo 90 0  ;
+move -r 0 2.760968 0.70557 ;
+scale -r .2 0.3 0.2 ;
+
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+// Result: RightEye
+move -r .23 2.86652 0.5 ;
+scale -r 0.1 0.1 0.1 ;
+
+duplicate -rr;
+// Result: LeftEye
+move -r -0.45 0 0 ;
+
+duplicate -rr;
+// Result: MiddleButton
+move -r 0.31 -1.303922 0.243 ;
+
+duplicate -rr;
+// Result: BottomButton
+move -r 0 -0.235897 -0.05 ;
+duplicate -rr;
+// Result: TopButton
+move -r 0 0.531082 0.02 ;
