@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: TheModelingStuff.ma
-//Last modified: Fri, Aug 29, 2025 05:16:56 PM
+//Last modified: Tue, Sep 02, 2025 08:48:46 AM
 //Codeset: UTF-8
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,20 +11,22 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "EABD0C36-934C-3DE1-315E-01A898DDC5E1";
+fileInfo "UUID" "8F0CE1CA-B747-73DE-9D15-6CB7760E899A";
 createNode transform -s -n "persp";
 	rename -uid "AEC725B6-5146-D0FF-196B-EBA55931357B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.4892226803640831 12.327807492675417 50.97764373248264 ;
-	setAttr ".r" -type "double3" -11.138352729914903 -351.79999999970568 1.0041899440709871e-16 ;
+	setAttr ".t" -type "double3" 11.587885942657351 13.457341871803404 34.142731788818871 ;
+	setAttr ".r" -type "double3" -20.400000000000045 19.199999999999967 4.2098611074201615e-16 ;
+	setAttr ".rpt" -type "double3" 1.0717222941437883e-15 1.2436569552766602e-15 3.3245770206105955e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E377FCD2-D644-1674-7339-2491A622AD65";
 	setAttr -k off ".v" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 57.283662614505786;
+	setAttr ".fl" 34.999999999999986;
+	setAttr ".coi" 38.568092222601265;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".tp" -type "double3" -0.30037307739258617 0.013583004474639893 0.0043020844459533691 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "427AECBC-E043-63BE-B722-46BE3E35096D";
@@ -659,6 +661,32 @@ createNode groupParts -n "groupParts4";
 createNode deleteComponent -n "deleteComponent8";
 	rename -uid "66987BEF-314F-510B-72B9-C29FE805C5CC";
 	setAttr ".dc" -type "componentList" 1 "f[96]";
+createNode polyBevel3 -n "polyBevel4";
+	rename -uid "790D3550-6C45-579F-653F-45BA9CA16693";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 4 "e[72]" "e[74]" "e[76]" "e[78]";
+	setAttr ".ix" -type "matrix" 13 0 0 0 0 3.5 0 0 0 0 21 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".oaf" yes;
+	setAttr ".at" 180;
+	setAttr ".sn" yes;
+	setAttr ".mv" yes;
+	setAttr ".mvt" 0.0001;
+	setAttr ".sa" 30;
+createNode polyTweak -n "polyTweak7";
+	rename -uid "3381447F-8847-966B-D001-DFBD8D910DAC";
+	setAttr ".uopa" yes;
+	setAttr -s 17 ".tk";
+	setAttr ".tk[60]" -type "float3" -0.013858297 0 0 ;
+	setAttr ".tk[61]" -type "float3" -0.013858297 0 0 ;
+	setAttr ".tk[62]" -type "float3" -0.013858297 0 0 ;
+	setAttr ".tk[63]" -type "float3" -0.010196838 0 0 ;
+	setAttr ".tk[70]" -type "float3" -0.00657241 0 0 ;
+	setAttr ".tk[71]" -type "float3" -0.00657241 0 0 ;
+	setAttr ".tk[73]" -type "float3" -0.012198026 0 0 ;
+	setAttr ".tk[83]" -type "float3" -0.013858297 0 0 ;
+	setAttr ".tk[84]" -type "float3" -0.013858297 0 0 ;
+	setAttr ".tk[85]" -type "float3" -0.013858297 0 0 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -702,7 +730,7 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "deleteComponent8.og" "pCubeShape1.i";
+connectAttr "polyBevel4.out" "pCubeShape1.i";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[3].gid";
 connectAttr "set1.mwc" "pCubeShape1.iog.og[3].gco";
 connectAttr "groupId2.id" "pCubeShape1.iog.og[4].gid";
@@ -813,6 +841,9 @@ connectAttr "pCubeShape1.iog.og[6]" "set4.dsm" -na;
 connectAttr "polyDelEdge13.out" "groupParts4.ig";
 connectAttr "groupId4.id" "groupParts4.gi";
 connectAttr "groupParts4.og" "deleteComponent8.ig";
+connectAttr "polyTweak7.out" "polyBevel4.ip";
+connectAttr "pCubeShape1.wm" "polyBevel4.mp";
+connectAttr "deleteComponent8.og" "polyTweak7.ip";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 // End of TheModelingStuff.ma
