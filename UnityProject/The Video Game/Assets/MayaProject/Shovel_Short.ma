@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Shovel_Short.ma
-//Last modified: Wed, Sep 10, 2025 02:54:02 PM
+//Last modified: Wed, Sep 10, 2025 02:55:36 PM
 //Codeset: UTF-8
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,12 +11,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "B1D8049A-1C45-DDE8-8B84-D7BFEE3598C3";
+fileInfo "UUID" "1CA680C2-224C-55BA-1DF6-90BC548AC592";
 createNode transform -s -n "persp";
 	rename -uid "A79676DA-2845-7D07-96A4-20853DDDE0A3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 25.290036973837619 39.353601906744139 69.824029534674963 ;
-	setAttr ".r" -type "double3" -15.60000000000136 18.399999999998681 -4.1898976294480161e-16 ;
+	setAttr ".t" -type "double3" 77.884050991546218 42.820199022496091 14.026109121539214 ;
+	setAttr ".r" -type "double3" -18.000000000003187 73.599999999999255 1.1264922682726541e-14 ;
 	setAttr ".rp" -type "double3" -5.2939559203393771e-23 0 -3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 1.0451436779203548e-16 -3.5954070174809261e-15 3.6113997799802977e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
