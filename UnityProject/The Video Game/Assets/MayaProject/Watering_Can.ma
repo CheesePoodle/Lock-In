@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Watering_Can.ma
-//Last modified: Mon, Sep 15, 2025 12:05:44 PM
+//Last modified: Tue, Sep 16, 2025 09:18:54 AM
 //Codeset: UTF-8
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "1A9D434B-CE41-193F-CED3-67A087E854F6";
+fileInfo "UUID" "20AFF876-054E-5E79-6CF5-C39A4A37FFED";
 createNode transform -s -n "persp";
 	rename -uid "713ACE82-1A4F-426E-D89C-78B92A8DB5D1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 54.745472268585878 14.181748487324985 20.066256928303044 ;
+	setAttr ".t" -type "double3" 55.667593060013665 14.146192290840791 20.420225936090564 ;
 	setAttr ".r" -type "double3" 2.0616472704028803 69.000000000000441 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "ABE2B5DE-5949-E909-2DA5-BEA6C7EB1EFE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 54.460383998970606;
+	setAttr ".coi" 55.448748838271548;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
