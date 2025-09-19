@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Watering_Can.ma
-//Last modified: Wed, Sep 17, 2025 10:50:44 AM
+//Last modified: Wed, Sep 17, 2025 10:51:50 AM
 //Codeset: UTF-8
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,18 +11,18 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Mac OS X 15.6.1";
-fileInfo "UUID" "8969A512-764D-575B-7996-B6AA9CC24FC4";
+fileInfo "UUID" "31091AA2-6A41-F617-1E21-98A4DA748596";
 createNode transform -s -n "persp";
 	rename -uid "713ACE82-1A4F-426E-D89C-78B92A8DB5D1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 73.102514258537497 10.950231958197195 -10.129797907832964 ;
-	setAttr ".r" -type "double3" -3.5999999999981478 91.199999999999079 2.5444437451708134e-14 ;
+	setAttr ".t" -type "double3" 35.999408397163137 24.618706939804397 11.086876891092897 ;
+	setAttr ".r" -type "double3" -20.40000000000121 67.999999999987452 0 ;
 	setAttr ".rpt" -type "double3" -3.5355537429988692e-17 2.4711059599666771e-17 5.9804274121000618e-19 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "ABE2B5DE-5949-E909-2DA5-BEA6C7EB1EFE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 78.309405672865736;
+	setAttr ".coi" 41.201138293468432;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -147,6 +147,7 @@ createNode mesh -n "Watering_CanShape" -p "Watering_Can";
 	setAttr ".gtag[8].gtagcmp" -type "componentList" 10 "f[30:39]" "f[260:339]" "f[360]" "f[413:422]" "f[448:457]" "f[496:500]" "f[526:528]" "f[549:628]" "f[829:1208]" "f[1249:1608]";
 	setAttr ".gtag[9].gtagnm" -type "string" "topRing";
 	setAttr ".gtag[9].gtagcmp" -type "componentList" 8 "e[20:39]" "e[815]" "e[835]" "e[904]" "e[1081:1100]" "e[1361:1380]" "e[1621:1640]" "e[2441:2460]";
+	setAttr ".pv" -type "double2" 0.49592071771621704 0.83992630243301392 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 1936 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.64860266 0.10796607 0.62640899
@@ -599,6 +600,8 @@ createNode mesh -n "Watering_CanShape" -p "Watering_Can";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 2 ".pt[22:23]" -type "float3"  0 -0.017777579 0 0 -0.017777579 
+		0;
 	setAttr -s 1599 ".vt";
 	setAttr ".vt[0:165]"  4.68449879 0.092355251 -1.52208591 3.98487616 0.092355251 -2.89517999
 		 2.89517999 0.092355251 -3.98487592 1.52208591 0.092355251 -4.68449879 0 0.092355251 -4.92557335
@@ -4772,6 +4775,7 @@ createNode mesh -n "Watering_CanShape" -p "Watering_Can";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "7A093157-C44A-D50A-80B5-498239FF6CC4";
@@ -4906,6 +4910,9 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
+select -ne :modelPanel2ViewSelectedSet;
+	setAttr ".ihi" 0;
+	setAttr -s 2 ".dsm";
 connectAttr "groupId13.id" "Watering_CanShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Watering_CanShape.iog.og[0].gco";
 connectAttr "groupId12.id" "Watering_CanShape.ciog.cog[0].cgid";
