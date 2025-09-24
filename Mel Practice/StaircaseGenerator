@@ -1,0 +1,35 @@
+//Create a code that generates a spiral staircase in maya.
+
+//numbers will stay the same
+int $stepNumber = 10;
+float $stepHeight = 2;
+float $stepWidth = 4;
+float $stepLength = 8;
+float $radius = 5;
+
+//numbers will change
+float $rotation = 0;
+float $positionChangeY = 0;
+float $positionChangeX = 0;
+float $positionChangeZ = 0;
+
+
+for ($i = 0; $i <= $stepNumber; $i++){
+    float $angleRad = deg_to_rad($i*30);
+    $rotation = $rotation - 40;
+    $positionChangeY = $positionChangeY + $stepHeight;
+    $positionChangeX = cos($angleRad) * $radius;
+    $positionChangeZ = sin($angleRad) * $radius;
+        GenerateStair($stepHeight, $stepWidth, $stepLength, $rotation, $positionChangeY, $positionChangeX, $positionChangeZ);
+
+}
+
+proc GenerateStair(float $stepHeight, float $stepWidth, float $stepLength, float $rotation, float $positionChangeY, float $positionChangeX, float $positionChangeZ){
+    polyCube -w $stepWidth -h $stepHeight -d $stepLength;
+    
+    move -y $positionChangeY;
+    move -x $positionChangeX;
+    move -z $positionChangeZ;
+    rotate -y $rotation;
+}
+
