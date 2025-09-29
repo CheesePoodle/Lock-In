@@ -1,0 +1,92 @@
+//calculate all numbers in the input array from left to right
+//Return the result as a float
+//Calculator must perform: Sum of 2 or more numbers, subtract, multiply, divide, power, mean, and median
+
+proc float sum(float $input[]){
+    float $result = 0.0;
+    for($i = 0; $i < size($input); $i++){
+        $result += $input[$i];
+    }
+    return $result;
+}
+
+proc float subtract(float $input[]){
+    float $result = 0.0;
+    for($i = 0; $i < size($input); $i++){
+        if ($i == 0){
+            $result = $input[$i];
+        } else {
+            $result -= $input[$i];
+        }
+    }
+    return $result;
+}
+
+proc float multiply(float $input[]){
+    float $result = $input[0];
+    for($i = 1; $i < size($input); $i++){
+        $result *= $input[$i];
+    }
+    return $result;
+}
+
+proc float divide(float $input[]){
+    float $result = $input[0];
+    for($i = 1; $i < size($input); $i++){
+        if ($input[$i] == 0){
+            error("Division by zero");
+        }
+        $result /= $input[$i];
+    }
+    return $result;
+}
+
+proc float power(float $input[]){
+    if (size($input) != 2) error("power requires exactly two numbers");
+    return pow($input[0], $input[1]);
+}   
+
+proc float mean(float $input[]){
+    if (size($input) == 0) error("mean requires at least one number");
+    return sum($input) / size($input);
+}
+
+proc float median(float $input[]){
+    if (size($input) == 0) error("median requires at least one number");
+    float $sorted[] = sort($input);
+    int $n = size($sorted);
+    if ($n % 2 == 1){
+        return $sorted[$n / 2];
+    } else {
+        return ($sorted[$n / 2 - 1] + $sorted[$n / 2]) / 2.0;
+    }
+}
+
+global proc calculator (string $method, float $input[]){
+    switch ($method){
+        case "Sum":
+            print("sum: " + sum($input));
+            break;
+        case "Subtract":
+            print("difference: " + subtract($input));
+            break;
+        case "Multiply":
+            print("multiplication: " + multiply($input));
+            break;
+        case "Divide":
+            print("division: " + divide($input));
+            break;
+        case "Power":
+            print("power: " + power($input));
+            break;
+        case "Mean":
+            print("mean: " + mean($input));
+            break;
+        case "Median":
+            print("median: " + median($input));
+            break;
+        default:
+            error("Invalid method");
+            break;
+    }
+}
