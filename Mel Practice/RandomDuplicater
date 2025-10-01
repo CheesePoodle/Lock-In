@@ -1,0 +1,15 @@
+//Create a function that duplicates all selected objects and randomly disperses them throughout the scene.
+//function must include parameters for number of duplicates(x), and range of numbers used to randomize the range for each axis (minX, maxX, minY, maxY, minZ, maxZ)
+//function duplicates the objects X number of times, and randomly place each object within the range.
+//create a UI that contains fields for each needed value, and a button to call the function
+
+string $randomWindow = `window`;
+string $randomColumns = `rowLayout -numberOfColumns 7`;
+    intField -p $randomColumns -ann "minimum X";
+    intField -p $randomColumns -ann "maximum X";
+    intField -p $randomColumns -ann "minimum Y";
+    intField -p $randomColumns -ann "maximum Y";
+    intField -p $randomColumns -ann "minimum Z";
+    intField -p $randomColumns -ann "maximum Z";
+    intField -p $randomColumns -ann "number of duplicates";
+showWindow $randomWindow;

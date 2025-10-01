@@ -1,0 +1,11 @@
+string $calcWindow = `window`;
+string $calcColumns = `columnLayout`;
+    button -p $calcColumns;
+    button -p $calcColumns;
+    intField -p $calcColumns;
+string $calcRows = `rowLayout -numberOfColumns 3`;
+     button -p $calcRows;
+     button -p $calcRows;
+     button -p $calcRows;
+
+showWindow;
