@@ -3,13 +3,50 @@
 //function duplicates the objects X number of times, and randomly place each object within the range.
 //create a UI that contains fields for each needed value, and a button to call the function
 
-string $randomWindow = `window`;
-string $randomColumns = `rowLayout -numberOfColumns 7`;
+string $randomWindow = `window -title "Random Duplicater" -widthHeight 300 400`;
+string $randomColumns = `columnLayout`;
+    text -label "minimum X";
     intField -p $randomColumns -ann "minimum X";
+    text -label "maximum X";
     intField -p $randomColumns -ann "maximum X";
+    text -label "minimum Y";
     intField -p $randomColumns -ann "minimum Y";
+    text -label "maximum Y";
     intField -p $randomColumns -ann "maximum Y";
+    text -label "minimum Z";
     intField -p $randomColumns -ann "minimum Z";
+    text -label "maximum Z";
     intField -p $randomColumns -ann "maximum Z";
+    text -label "number of duplicates";
     intField -p $randomColumns -ann "number of duplicates";
+    
+    button -label "Duplicate Randomly" -command `duplicateRandomly(`intField -q -ann "minimum X"`,`intField -q -ann "maximum X"`, `intField -q -ann "minimum Y"`, `intField -q -ann "maximum Y"`, `intField -q -ann "minimum Z"`, `intField -q -ann "maximum Z"`, `intField -q -ann "number of duplicates"`)`;
 showWindow $randomWindow;
+/*proc initiateDuplicate(){
+    int $minX = `intField -q -v $minXField`;
+    int $maxX = `intField -q -v $maxXField`;
+    int $minY = `intField -q -v $minYField`;
+    int $maxY = `intField -q -v $maxYField`;
+    int $minZ = `intField -q -v $minZField`;
+    int $maxZ = `intField -q -v $maxZField`;
+    int $numDuplicates = `intField -q -v $numDuplicatesField`;
+    duplicateRandomly($minX, $maxX, $minY, $maxY, $minZ, $maxZ, $numDuplicates);
+}*/
+
+global proc duplicateRandomly(int $minX, int $maxX, int $minY, int $maxY, int $minZ, int $maxZ, int $numDuplicates){
+    string $selectedObjects[] = `ls -sl`;
+    if (size($selectedObjects) == 0){
+        error("No objects selected");
+        return;
+    }
+
+    for ($i = 0; $i < $numDuplicates; $i++){
+        for ($obj in $selectedObjects){
+            string $newObj[] = `duplicate $obj`;
+            float $randX = rand($minX, $maxX);
+            float $randY = rand($minY, $maxY);
+            float $randZ = rand($minZ, $maxZ);
+            move -absolute $randX $randY $randZ $newObj[0];
+        }
+    }
+}
