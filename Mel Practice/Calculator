@@ -1,10 +1,9 @@
 //calculate all numbers in the input array from left to right
 //Return the result as a float
 //Calculator must perform: Sum of 2 or more numbers, subtract, multiply, divide, power, mean, and median
-/*
-if($calcWindow -exists == 0){
-    deleteUI $calcWindow;
-}*/
+if(`window -exists $calcWindow`){
+    deleteUI -window $calcWindow;
+}
 
 proc float sum(int $input[]){
     float $result = 0.0;
@@ -110,16 +109,16 @@ global int $inputArray[];
     button -label "";
     string $input = `text -label "Input"`;
     button -label "";
-    button -label "1" -command "addToArray(1, $inputArray, $inputLabel)";
-    button -label "2" -command "addToArray(2, $inputArray, $inputLabel)";
-    button -label "3" -command "addToArray(3, $inputArray, $inputLabel)";
-    button -label "4" -command "addToArray(4, $inputArray, $inputLabel)";
-    button -label "5" -command "addToArray(5, $inputArray, $inputLabel)";
-    button -label "6" -command "addToArray(6, $inputArray, $inputLabel)";
-    button -label "7" -command "addToArray(7, $inputArray, $inputLabel)";
-    button -label "8" -command "addToArray(8, $inputArray, $inputLabel)";
-    button -label "9" -command "addToArray(9, $inputArray, $inputLabel)";
-    button -label "0" -command "addToArray(0, $inputArray, $inputLabel)";
+    button -label "1" -command "addToArray 1";
+    button -label "2" -command "addToArray 2";
+    button -label "3" -command "addToArray 3";
+    button -label "4" -command "addToArray 4";
+    button -label "5" -command "addToArray 5";
+    button -label "6" -command "addToArray 6";
+    button -label "7" -command "addToArray 7";
+    button -label "8" -command "addToArray 8";
+    button -label "9" -command "addToArray 9";
+    button -label "0" -command "addToArray 0";
     button -label "";
     button -label "";
 
@@ -131,19 +130,46 @@ global int $inputArray[];
     radioButton -label "Power" -collection $rc Power;
     radioButton -label "Mean" -collection $rc Mean;
     radioButton -label "Median" -collection $rc Median;  
-    string $selOperation = `radioButton -q -select $rc`;
 
-    button -label "Calculate" -command "print $selOperation";
+    button -label "Calculate" -command "prntSelection()";
     
     //"calculator(`radioButton -query -select`, $inputArray)";
 
 // Add number to input array and update input field
-proc addToArray(int $number, int $inputArray[], string $inputLabel){
+/*proc addToArray(int $number, int $inputArray[], string $inputLabel){
     intArrayInsertAtIndex(size($inputArray), $inputArray, $number);
     for($i = 0; $i < size($inputArray); $i++){
         print $inputArray[$i];
     }    
     //add it to the input array
+}*/
+global proc addToArray(int $number)
+{
+    global int $inputArray[];
+    global string $inputTextCtrl;
+
+    // append
+    intArrayInsertAtIndex(size($inputArray), $inputArray, $number);
+
+    // build a label from the array
+    string $s = "";
+    for ($i = 0; $i < size($inputArray); $i++) {
+        $s += ($inputArray[$i] + "");
+        if ($i < size($inputArray)-1) $s += ", ";
+    }
+
+    // update the text control
+    if (`objExists $inputTextCtrl`) {
+        text -e -label $s $inputTextCtrl;
+    }
+}
+
+global proc prntSelection()
+{
+    global string $rc;
+    string $selCtrl = `radioCollection -q -select $rc`;   // returns control name
+    string $label = `radioButton -q -label $selCtrl`;    // get the label text
+    calculator($label, $inputArray);
 }
 
 showWindow $calcWindow;
