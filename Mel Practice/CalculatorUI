@@ -1,11 +1,49 @@
-string $calcWindow = `window`;
-string $calcColumns = `columnLayout`;
-    button -p $calcColumns;
-    button -p $calcColumns;
-    intField -p $calcColumns;
-string $calcRows = `rowLayout -numberOfColumns 3`;
-     button -p $calcRows;
-     button -p $calcRows;
-     button -p $calcRows;
+//radio buttons for sum, subtract, multiply, divide, power, mean, median
+//float input field for numbers (comma separated) that holds an array
+//connect to calculator functions
 
-showWindow;
+
+
+string $calcWindow = `window -title "calculatorWindow" -widthHeight 300 300`;
+gridLayout -numberOfColumns 3 -cellWidthHeight 100 25;
+global string $inputLabel = "";
+global int $inputArray[];
+
+    button -label "";
+    string $input = `text -label "Input"`;
+    button -label "";
+    button -label "1" -command "addToArray(1, $inputArray, $inputLabel)";
+    button -label "2" -command "addToArray(2, $inputArray, $inputLabel)";
+    button -label "3" -command "addToArray(3, $inputArray, $inputLabel)";
+    button -label "4" -command "addToArray(4, $inputArray, $inputLabel)";
+    button -label "5" -command "addToArray(5, $inputArray, $inputLabel)";
+    button -label "6" -command "addToArray(6, $inputArray, $inputLabel)";
+    button -label "7" -command "addToArray(7, $inputArray, $inputLabel)";
+    button -label "8" -command "addToArray(8, $inputArray, $inputLabel)";
+    button -label "9" -command "addToArray(9, $inputArray, $inputLabel)";
+    button -label "0" -command "addToArray(0, $inputArray, $inputLabel)";
+    button -label "";
+    button -label "";
+
+    radioButton -label "Add";
+    radioButton -label "Subtract";
+    radioButton -label "Multiply";
+    radioButton -label "Divide";
+    radioButton -label "Power";
+    radioButton -label "Mean";
+    radioButton -label "Median";
+    
+    button -label "Calculate";
+
+
+proc addToArray(int $number, int $inputArray[], string $inputLabel){
+    intArrayInsertAtIndex(size($inputArray), $inputArray, $number);
+    for($i = 0; $i < size($inputArray); $i++){
+        print $inputArray[$i];
+    }    
+     // prints the updated array
+    //get the value of the button that was pressed
+    //add it to the input array
+}
+
+showWindow $calcWindow;
