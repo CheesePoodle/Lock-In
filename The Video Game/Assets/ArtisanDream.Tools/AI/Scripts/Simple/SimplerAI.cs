@@ -3,8 +3,8 @@ using UnityEngine.AI;
 
 public class SimplerAI : MonoBehaviour
 {
-    private NavMeshAgent agent;
-    private Transform playerTransformObj;
+    public NavMeshAgent agent;
+    public Transform playerTransformObj;
 
     private void Start()
     {
