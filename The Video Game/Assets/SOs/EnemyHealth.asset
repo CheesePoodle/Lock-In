@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21667c5c1ee7a4111a1243f78270d1dd, type: 3}
-  m_Name: PlayerHealth
+  m_Name: EnemyHealth
   m_EditorClassIdentifier: 
   value: 0
   minValue: 0
-  maxValue: 1
+  maxValue: 0
   valueOutOfRange:
     m_PersistentCalls:
       m_Calls: []
@@ -24,7 +24,7 @@ MonoBehaviour:
   onValueZero:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 514978372ddb84760a2d110eb0f7feef, type: 2}
+      - m_Target: {fileID: 11400000, guid: 4db5799669dca446fb4e9ac44ea8ce57, type: 2}
         m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
         m_MethodName: RaiseAction
         m_Mode: 1

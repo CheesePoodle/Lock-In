@@ -40,8 +40,8 @@ public class FloatData : NameId
     {
         Value = data;
     }
-
-    private void ClampValue()
+    
+    public void ClampValue()
     {
         if (!(Value < minValue) && !(Value > maxValue)) return;
         valueOutOfRange.Invoke(Value);
