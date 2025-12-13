@@ -40,7 +40,7 @@ public class SimpleCharacterController : MonoBehaviour
     {
         MoveCharacter();
         ApplyGravity();
-        KeepCharacterOnXAxis();
+        //KeepCharacterOnXAxis();
     }
 
     /// <summary>
@@ -49,8 +49,9 @@ public class SimpleCharacterController : MonoBehaviour
     private void MoveCharacter()
     {
         // Handle horizontal movement
-        var moveInput = Input.GetAxis("Horizontal");
-        var move = new Vector3(moveInput, 0f, 0f) * (moveSpeed * Time.deltaTime);
+        var horizontal = Input.GetAxis("Horizontal");
+        var vertical = Input.GetAxis("Vertical");
+        var move = new Vector3(horizontal, 0f, vertical) * (moveSpeed * Time.deltaTime);
         controller.Move(move);
 
         // Handle jumping
