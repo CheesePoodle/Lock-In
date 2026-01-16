@@ -42,7 +42,7 @@ public class IntData : ScriptableObject
         onValueChanged.Invoke();
     }
 
-    public void CheckValueRange()
+    private void CheckValueRange()
     {
         if (value >= minValue && value <= maxValue) return;
         valueOutOfRange.Invoke(value);
