@@ -1,3 +1,9 @@
 [submodule "UnityProject/The Video Game/Assets/ArtisanDream.Tools"]
 	path = UnityProject/The Video Game/Assets/ArtisanDream.Tools
 	url = https://github.com/anthonyromrell/ArtisanDream.Tools.git
+[submodule "/Users/DuchessofDaybreak/Documents/GitHub/Lock-In/Sophomore_Spring/Games/FinderGame/Assets/ArtisanDream.Tools"]
+	path = /Users/DuchessofDaybreak/Documents/GitHub/Lock-In/Sophomore_Spring/Games/FinderGame/Assets/ArtisanDream.Tools
+	url = https://github.com/anthonyromrell/ArtisanDream.Tools.git
+[submodule "assets"]
+	path = assets
+	url = https://github.com/anthonyromrell/ArtisanDream.Tools.git
