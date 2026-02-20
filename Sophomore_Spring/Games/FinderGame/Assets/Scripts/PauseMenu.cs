@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject PausePanel;
+    public GameObject pausePanel;
+
+    private bool isPaused;
 
     // Update is called once per frame
     void Start()
     {
-        PausePanel.SetActive(false);
+        pausePanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        //
     }
 
     public void Pause()
     {
-        PausePanel.SetActive(true);
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void Continue()
     {
-        PausePanel.SetActive(false);
+        pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 }

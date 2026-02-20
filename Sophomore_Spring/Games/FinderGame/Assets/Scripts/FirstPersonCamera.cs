@@ -7,7 +7,7 @@ public class FirstPersonCamera : MonoBehaviour
     //Variables
     public Transform player;
 
-    public float mouseSensitivity = 2f;
+    public float mouseSensitivity = 3f;
 
     private float cameraVerticalRotation = 0f;
 
@@ -16,13 +16,13 @@ public class FirstPersonCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0) return;
         //Collect mouse input
         float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
