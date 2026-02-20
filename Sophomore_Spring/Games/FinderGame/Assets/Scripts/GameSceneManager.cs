@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +7,12 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadSceneAsync("MainScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 
 

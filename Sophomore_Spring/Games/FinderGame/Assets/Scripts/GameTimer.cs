@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -37,8 +36,12 @@ public class GameTimer : MonoBehaviour
         onTimerEnd.Invoke();
         _timerEnded = true;
     }
-    /*public float GetTimeInSeconds()
+
+    public string GetFormattedTime()
     {
-        return targetTimeInSeconds;
-    }*/
+        int minutes = Mathf.FloorToInt(currentTimeInSeconds / 60f);
+        int seconds = Mathf.FloorToInt(currentTimeInSeconds % 60f);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+   
 }
