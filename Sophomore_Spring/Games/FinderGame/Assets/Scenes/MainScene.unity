@@ -12646,6 +12646,7 @@ GameObject:
   - component: {fileID: 1474817097}
   - component: {fileID: 1474817096}
   - component: {fileID: 1474817098}
+  - component: {fileID: 1474817099}
   m_Layer: 0
   m_Name: SceneNavigator
   m_TagString: Untagged
@@ -12692,6 +12693,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524413ec37fc34c49bcd969228930010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1474817099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474817095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65180f705bb904ee98a80edc6dcf0d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: b0c69094369ab43f29bd1191a0cea84f, type: 2}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  respondEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1474817096}
+        m_TargetAssemblyTypeName: GameSceneManager, Assembly-CSharp
+        m_MethodName: LoadGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  respondLateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  holdTime: 0.1
 --- !u!114 &1484794702
 MonoBehaviour:
   m_ObjectHideFlags: 0
