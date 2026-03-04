@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: FirePanel_Elevator.ma
-//Last modified: Tue, Mar 03, 2026 09:09:36 AM
+//Last modified: Tue, Mar 03, 2026 09:10:18 AM
 //Codeset: UTF-8
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -11,7 +11,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Mac OS X 15.7.4";
-fileInfo "UUID" "8634606E-1149-5D8E-463B-06BD58FA1BD2";
+fileInfo "UUID" "49C0EE91-CD4D-D3BE-17BB-AFBA0A3A0EBE";
 createNode transform -s -n "persp";
 	rename -uid "DEC13174-2646-C929-E1D7-BBABD3EFB8BD";
 	setAttr ".v" no;
@@ -87,7 +87,7 @@ createNode mesh -n "FirePanelElevatorShape" -p "FirePanelElevator";
 	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.23000705242156982 0.4638138555926703 ;
+	setAttr ".pv" -type "double2" 0.37625421583652496 0.5001884326338768 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
