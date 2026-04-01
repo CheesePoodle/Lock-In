@@ -2233,6 +2233,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 132529064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &530933308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 530933309}
+  m_Layer: 0
+  m_Name: StartTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &530933309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530933308}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 48, y: 24.1, z: -39.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572583031
 GameObject:
   m_ObjectHideFlags: 0
@@ -11203,8 +11234,8 @@ Transform:
   m_GameObject: {fileID: 1022129680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.20000076, y: -4.700001, z: -9.900001}
-  m_LocalScale: {x: 1, y: 18.89689, z: 12.192949}
+  m_LocalPosition: {x: -0.6, y: 3.9, z: -32.1}
+  m_LocalScale: {x: 1.9016, y: 35.934326, z: 23.186113}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 725840141}
@@ -11447,7 +11478,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -13399,7 +13430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1537858088
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21602,8 +21633,8 @@ Transform:
   m_GameObject: {fileID: 1979656058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.48976073, z: -0, w: 0.8718569}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1.9603772, y: 1.9603772, z: 1.9603772}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1537858090}
@@ -21622,12 +21653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed86d9198009842138cb85f683ad8eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLocation: {fileID: 0}
+  startLocation: {fileID: 530933308}
   moveSpeed: 30
   sampleDistance: 0.5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 33
+    m_Bits: 59
 --- !u!195 &1979656061
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -21892,3 +21923,4 @@ SceneRoots:
   - {fileID: 913817764}
   - {fileID: 362227463}
   - {fileID: 59509434}
+  - {fileID: 530933309}
