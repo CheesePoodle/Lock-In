@@ -16,6 +16,7 @@ public class ClickToMove : MonoBehaviour
     [SerializeField] private float sampleDistance = 0.5f;
 
     [SerializeField] private LayerMask groundLayer;
+   
 
     public static event System.Action<Vector3> OnGroundTouch;
 
@@ -44,6 +45,7 @@ public class ClickToMove : MonoBehaviour
     {
         if (Input.GetMouseButton(0))//left click
         {
+            _agent.updateRotation = false;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 1f);
             
